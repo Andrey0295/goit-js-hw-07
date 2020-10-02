@@ -18,7 +18,8 @@ const images = [
 
 const getListEl = document.querySelector('#gallery');
 getListEl.style.display = 'flex';
-getListEl.style.flexWrap = 'wrap';
+getListEl.style.flexDirection = 'column';
+getListEl.style.alignItems = 'center';
 getListEl.style.listStyle = 'none';
 
 const makeItemGallery = images.map(function (image) {
@@ -34,15 +35,11 @@ console.log(getListEl);
 const getImage = document.querySelectorAll('.item-gallery');
 console.log(getImage);
 
-// const elements = colorPickerOptions.map(option => {
-//   const buttonEl = document.createElement('button');
-//   buttonEl.type = 'button';
-//   buttonEl.classList.add('color-picker__option');
-//   buttonEl.textContent = option.label;
-//   buttonEl.style.backgroundColor = option.color;
-
-//   return buttonEl;
-// });
+const makeStyles = getImage.forEach(function (image) {
+  image.style.width = '640px';
+  return image;
+});
+console.log(makeStyles);
 
 // Используй массив объектов images для создания тегов img вложенных в li.
 // Для создания разметки используй шаблонные строки и insertAdjacentHTML().
