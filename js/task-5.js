@@ -5,16 +5,20 @@
 // в спане должна отображаться строка 'незнакомец'.
 
 // 1.Создать переменну, с инпутом и аутпутом.
-const nameInputEl = document.querySelector('#name-input');
+// 2.Повесить слушателя событий на инпут с отдельной функцией.
+// 3.Подставить значение по результату слушателя в спан.
 
+const nameInputEl = document.querySelector('#name-input');
 let nameOutputEl = document.querySelector('#name-output');
 
-// 2.Повесить слушателя событий на инпут с отдельной функцией.
-
 const handleValueTextInput = function (event) {
+  console.log(event);
   console.log(event.currentTarget.value);
-  // 3.Подставить значение по результату слушателя в спан.
-  nameOutputEl.textContent = event.currentTarget.value;
+  if (event.currentTarget.value !== '') {
+    nameOutputEl.textContent = event.currentTarget.value;
+  } else {
+    nameOutputEl.textContent = 'незнакомец';
+  }
 };
 
 nameInputEl.addEventListener('input', handleValueTextInput);
