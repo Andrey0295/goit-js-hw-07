@@ -18,4 +18,6 @@ const handleValueCheckedInput = function (event) {
     : inputEl.classList.add('invalid');
 };
 
+inputEl.addEventListener('input', handleValueCheckedInput);
+
 inputEl.addEventListener('blur', handleValueCheckedInput);
