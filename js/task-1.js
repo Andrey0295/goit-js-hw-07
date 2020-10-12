@@ -1,19 +1,12 @@
 const listItemsEl = document.querySelectorAll('.item');
 console.log(`В списке ${listItemsEl.length} категории`);
 
-const itemTitleEl = document.querySelectorAll('.item>h2');
-const underListQuantityEl = document.querySelectorAll('.item ul');
-
-console.log(
-  `Категория: ${itemTitleEl[0].textContent}, количество элементов: ${underListQuantityEl[0].children.length}`,
-);
-
-console.log(
-  `Категория: ${itemTitleEl[1].textContent}, количество элементов: ${underListQuantityEl[1].children.length}`,
-);
-
-console.log(
-  `Категория: ${itemTitleEl[2].textContent}, количество элементов: ${underListQuantityEl[2].children.length}`,
+listItemsEl.forEach(listItem =>
+  console.log(
+    `Категория: ${
+      listItem.firstElementChild.textContent
+    }, количество элементов: ${listItem.querySelectorAll('li').length}`,
+  ),
 );
 
 // Для каждого элемента li.item в списке ul#categories,
